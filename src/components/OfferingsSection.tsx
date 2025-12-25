@@ -1,0 +1,220 @@
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import {
+  GraduationCap,
+  Flame,
+  Users,
+  UserCheck,
+  Clock,
+  Zap,
+  Package,
+  Gift,
+  ArrowRight,
+} from "lucide-react";
+
+const masteryPrograms = [
+  {
+    icon: GraduationCap,
+    title: "BootCamp",
+    description:
+      "5-day intensive mentorship covering everything from store creation to scaling.",
+    highlight: "Most Popular",
+  },
+  {
+    icon: Users,
+    title: "Group Mentorship",
+    description: "3-month cohort program with live group sessions.",
+    highlight: null,
+  },
+  {
+    icon: UserCheck,
+    title: "Personal Mentorship",
+    description:
+      "1:1 mentorship with customized guidance from beginner to advanced strategies.",
+    highlight: "Premium",
+  },
+];
+
+const consultancySessions = [
+  {
+    icon: Clock,
+    title: "QuickFix",
+    description: "1-hour focused session to solve urgent business challenges.",
+  },
+  {
+    icon: Zap,
+    title: "Growth Pack",
+    description:
+      "4 intensive sessions over 2 weeks for deeper problem-solving and strategy guidance.",
+  },
+];
+
+const products = [
+  {
+    icon: Package,
+    title: "Winning Product List",
+    description:
+      "Curated list of high-potential dropshipping products ready to test.",
+  },
+  {
+    icon: Gift,
+    title: "Premium Dropshipping Kit",
+    description: "Recorded workshop + bonus resources for fast implementation.",
+  },
+];
+
+const OfferingCard = ({
+  icon: Icon,
+  title,
+  description,
+  highlight,
+  delay,
+}: {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  highlight?: string | null;
+  delay: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay }}
+    className="relative bg-card p-6 rounded-2xl shadow-card hover:shadow-elevated transition-all duration-300 border border-border/50 group"
+  >
+    {highlight && (
+      <span className="absolute -top-3 right-4 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
+        {highlight}
+      </span>
+    )}
+    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+      <Icon className="w-6 h-6 text-primary" />
+    </div>
+    <h4 className="font-serif font-semibold text-xl text-foreground mb-2">
+      {title}
+    </h4>
+    <p className="text-muted-foreground text-sm leading-relaxed">
+      {description}
+    </p>
+  </motion.div>
+);
+
+const OfferingsSection = () => {
+  return (
+    <section id="programs" className="section-padding gradient-hero">
+      <div className="container-wide">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary mb-4">
+            Explore Our Offerings
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Choose the path that fits your learning style and goals
+          </p>
+        </motion.div>
+
+        {/* Mastery Programs */}
+        <div className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8"
+          >
+            <div>
+              <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+                Mastery Programs
+              </h3>
+              <p className="text-muted-foreground mt-1">
+                Complete dropshipping mentorship from beginner to advanced
+              </p>
+            </div>
+            <Button variant="hero" className="group w-fit" asChild>
+              <a href="https://mediumturquoise-snail-907786.hostingersite.com/product-category/bb-mastery-programs/">
+                Enroll Now
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {masteryPrograms.map((program, index) => (
+              <OfferingCard
+                key={program.title}
+                {...program}
+                delay={index * 0.1}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Consultancy Sessions */}
+        <div id="consultancy" className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8"
+          >
+            <div>
+              <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+                Consultancy Sessions
+              </h3>
+              <p className="text-muted-foreground mt-1">
+                Personalized consultancy — ask anything, get expert guidance
+              </p>
+            </div>
+            <Button variant="outline" className="group w-fit" asChild>
+              <a href="https://mediumturquoise-snail-907786.hostingersite.com/product-category/bb-consultancy-sessions/">
+                Book Now
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {consultancySessions.map((session, index) => (
+              <OfferingCard key={session.title} {...session} delay={index * 0.1} />
+            ))}
+          </div>
+        </div>
+
+        {/* BB Products */}
+        <div id="products">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8"
+          >
+            <div>
+              <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+                BB Products
+              </h3>
+              <p className="text-muted-foreground mt-1">
+                Instant-access resources to accelerate your business success
+              </p>
+            </div>
+            <Button variant="outline" className="group w-fit" asChild>
+              <a href="https://mediumturquoise-snail-907786.hostingersite.com/product-category/bb-products/">
+                Get Access Now
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {products.map((product, index) => (
+              <OfferingCard key={product.title} {...product} delay={index * 0.1} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default OfferingsSection;

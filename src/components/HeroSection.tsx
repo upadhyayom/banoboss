@@ -4,14 +4,17 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
+    // NOTE: Ensure 'gradient-hero' is defined in your CSS
     <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
+      
       {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       </div>
 
-      {/* Main Container - Reduced top padding for mobile (pt-20) */}
+      {/* Main Container */}
+      {/* NOTE: Ensure 'container-wide' is defined, otherwise use 'container' */}
       <div className="container-wide section-padding pt-20 md:pt-32 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           
@@ -20,14 +23,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            // Reduced spacing between text elements on mobile (space-y-2)
             className="space-y-2 md:space-y-6"
           >
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-primary leading-tight">
               Build your own e-commerce business.
             </h1>
             
-            {/* Slightly smaller text on mobile to save vertical space */}
             <p className="text-xl md:text-3xl lg:text-4xl font-sans font-medium text-foreground/80">
               Learn the skills and earn independently.
             </p>
@@ -37,22 +38,27 @@ const HeroSection = () => {
             </p>
           </motion.div>
 
-          {/* CTA Button - Reduced top margin on mobile (mt-6) */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-6 md:mt-14"
           >
+            {/* NOTE: Ensure 'hero' variant exists in your Button component, or change to 'default' */}
             <Button variant="hero" size="xl" className="group" asChild>
-              <a href="https://api.whatsapp.com/send/?phone=916280026194&text=Hello%21&type=phone_number&app_absent=0">
+              <a 
+                href="https://api.whatsapp.com/send/?phone=916280026194&text=Hello%21&type=phone_number&app_absent=0"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 Book a Free Call
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </Button>
           </motion.div>
 
-          {/* Trust indicator - Reduced top margin on mobile (mt-4) */}
+          {/* Trust indicator */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

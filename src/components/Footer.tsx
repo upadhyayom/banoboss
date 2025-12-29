@@ -11,14 +11,14 @@ import logo from "@/assets/banoboss-logo.png";
 
 const footerLinks = {
   programs: [
-    { label: "BootCamp", href: "#programs" },
-    { label: "Group Mentorship", href: "#programs" },
-    { label: "Personal Mentorship", href: "#programs" },
+    { label: "BootCamp", href: "https://banoboss.in/product/bb-mastery-program-dropshipping-bootcamp/" },
+    { label: "Group Mentorship", href: "https://banoboss.in/product/bb-mastery-program-dropshipping-group-mentorship/" },
+    { label: "Personal Mentorship", href: "https://banoboss.in/product/bb-mastery-program-dropshipping-1-on-1-mentorship/" },
   ],
   services: [
-    { label: "QuickFix Session", href: "https://mediumturquoise-snail-907786.hostingersite.com/product/bb-consultancy-sessions-quickfix-session-1-hour/" },
-    { label: "Growth Pack", href: "https://mediumturquoise-snail-907786.hostingersite.com/product/bb-mastery-program-dropshipping-1-on-1-mentorship/" },
-    { label: "BB Products", href: "#products" },
+    { label: "QuickFix Session", href: "https://banoboss.in/product/bb-consultancy-sessions-quickfix-session-1-hour/" },
+    { label: "Growth Pack", href: "https://banoboss.in/product/bb-consultancy-sessions-growth-pack-4-sessions/" },
+    { label: "BB Products", href: "https://banoboss.in/product-category/bb-products/" },
   ],
   company: [
     { label: "Privacy Policy", href: "https://banoboss.in/privacy-policy/" },

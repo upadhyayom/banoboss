@@ -45,7 +45,7 @@ const HeroSection = () => {
             className="mt-6 md:mt-14"
           >
             <Button variant="hero" size="xl" className="group" asChild>
-              <a href="#contact">
+              <a href="https://api.whatsapp.com/send/?phone=916280026194&text=Hello%21&type=phone_number&app_absent=0">
                 Book a Free Call
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>

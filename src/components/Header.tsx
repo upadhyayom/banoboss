@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/banoboss-logo.png";
 
 const navItems = [
-  { label: "Mastery Programs", href: "#programs" },
-  { label: "Consultancy Sessions", href: "#consultancy" },
-  { label: "Products", href: "#products" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Mastery Programs", href: "https://banoboss.in/product-category/bb-mastery-programs/" },
+  { label: "Consultancy Sessions", href: "https://banoboss.in/product-category/bb-consultancy-sessions/" },
+  { label: "Products", href: "https://banoboss.in/product-category/bb-products/" },
+  { label: "Contact Us", href: "https://api.whatsapp.com/send/?phone=916280026194&text=Hello%21&type=phone_number&app_absent=0" },
 ];
 
 const Header = () => {
@@ -35,7 +35,7 @@ const Header = () => {
               </a>
             ))}
             <Button variant="hero" size="default" asChild>
-              <a href="#contact">Book Free Call</a>
+              <a href="https://api.whatsapp.com/send/?phone=916280026194&text=Hello%21&type=phone_number&app_absent=0">Book Free Call</a>
             </Button>
           </div>
 
@@ -70,7 +70,7 @@ const Header = () => {
                   </a>
                 ))}
                 <Button variant="hero" size="lg" className="mt-2" asChild>
-                  <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+                  <a href="https://api.whatsapp.com/send/?phone=916280026194&text=Hello%21&type=phone_number&app_absent=0" onClick={() => setIsMenuOpen(false)}>
                     Book Free Call
                   </a>
                 </Button>

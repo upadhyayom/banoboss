@@ -29,9 +29,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: MessageCircle, href: "#", label: "WhatsApp" },
+  { icon: Instagram, href: "https://www.instagram.com/banoboss.in?igsh=MXUxdGxyaGp3aXNjOQ==", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/share/1Crt2KqcLg/?mibextid=wwXIfr", label: "YouTube" },
+  // { icon: MessageCircle, href: "#", label: "WhatsApp" },
 ];
 
 const Footer = () => {
@@ -60,11 +60,11 @@ const Footer = () => {
               {/* Contact Info */}
               <div className="space-y-3">
                 <a
-                  href="mailto:zoomfame@gmail.com"
+                  href="mailto:Banoboss.in@gmail.com"
                   className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
                 >
                   <Mail size={16} />
-                  zoomfame@gmail.com
+                  Banoboss.in@gmail.com
                 </a>
                 <a
                   href="tel:+916280026194"

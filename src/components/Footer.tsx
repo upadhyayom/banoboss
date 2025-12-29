@@ -60,18 +60,18 @@ const Footer = () => {
               {/* Contact Info */}
               <div className="space-y-3">
                 <a
-                  href="mailto:hello@banoboss.in"
+                  href="mailto:zoomfame@gmail.com"
                   className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
                 >
                   <Mail size={16} />
-                  hello@banoboss.in
+                  zoomfame@gmail.com
                 </a>
                 <a
-                  href="tel:+911234567890"
+                  href="tel:+916280026194"
                   className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
                 >
                   <Phone size={16} />
-                  +91 12345 67890
+                 +916280026194
                 </a>
                 
               </div>

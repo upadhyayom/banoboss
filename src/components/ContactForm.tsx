@@ -26,21 +26,52 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // 1. Define WhatsApp Number (Format: CountryCode + Number, no '+')
+      const whatsappNumber = "916280026194";
 
-    toast({
-      title: "Request Submitted!",
-      description: "We'll get back to you within 24 hours.",
-    });
+      // 2. Format the Message for WhatsApp
+      // %0A is used for line breaks in URLs
+      const message = 
+        `*New Inquiry from Website*%0A%0A` +
+        `*Name:* ${formData.name}%0A` +
+        `*Phone:* ${formData.phone}%0A` +
+        `*Email:* ${formData.email}%0A` +
+        `*Query:* ${formData.query}`;
 
-    setFormData({ name: "", phone: "", email: "", query: "" });
-    setIsSubmitting(false);
+      // 3. Construct the API URL
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message.replace(/%0A/g, '\n'))}`;
+      
+      // Note: encodeURIComponent is safer for special characters
+      const finalUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+      // 4. Brief artificial delay for better UX/Feedback
+      await new Promise((resolve) => setTimeout(resolve, 800));
+
+      toast({
+        title: "Redirecting to WhatsApp",
+        description: "Please click 'Send' in WhatsApp to complete your inquiry.",
+      });
+
+      // 5. Open WhatsApp in a new tab
+      window.open(finalUrl, "_blank");
+
+      // 6. Reset Form Fields
+      setFormData({ name: "", phone: "", email: "", query: "" });
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Could not redirect to WhatsApp. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section id="contact" className="section-padding bg-cream-dark">
-      <div className="container-wide">
+    <section id="contact" className="section-padding bg-cream-dark py-16">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,9 +91,10 @@ const ContactForm = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="bg-card p-8 md:p-10 rounded-2xl shadow-elevated space-y-6"
+            className="bg-card p-8 md:p-10 rounded-2xl shadow-lg border space-y-6"
           >
             <div className="grid md:grid-cols-2 gap-6">
+              {/* Name Field */}
               <div className="space-y-2">
                 <label
                   htmlFor="name"
@@ -81,6 +113,8 @@ const ContactForm = () => {
                   className="h-12"
                 />
               </div>
+
+              {/* Phone Field */}
               <div className="space-y-2">
                 <label
                   htmlFor="phone"
@@ -102,6 +136,7 @@ const ContactForm = () => {
               </div>
             </div>
 
+            {/* Email Field */}
             <div className="space-y-2">
               <label
                 htmlFor="email"
@@ -122,6 +157,7 @@ const ContactForm = () => {
               />
             </div>
 
+            {/* Query Field */}
             <div className="space-y-2">
               <label
                 htmlFor="query"
@@ -141,18 +177,18 @@ const ContactForm = () => {
               />
             </div>
 
+            {/* Submit Button */}
             <Button
               type="submit"
-              variant="hero"
               size="lg"
-              className="w-full"
+              className="w-full bg-primary hover:bg-primary/90 text-white font-semibold"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
-                "Submitting..."
+                "Redirecting..."
               ) : (
                 <>
-                  Submit
+                  Submit to WhatsApp
                   <Send size={18} className="ml-2" />
                 </>
               )}

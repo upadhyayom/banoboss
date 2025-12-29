@@ -19,17 +19,18 @@ const masteryPrograms = [
     icon: GraduationCap,
     title: "BootCamp",
     description: "5-day intensive mentorship covering everything from store creation to scaling.",
-    highlight: "Most Popular",
+     highlight: null,
     buttonText: "Join Bootcamp",
-    href: "/bootcamp", // Replace with actual link
+    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-mastery-program-dropshipping-bootcamp/", // Replace with actual link
   },
   {
     icon: Users,
     title: "Group Mentorship",
     description: "3-month cohort program with live group sessions.",
-    highlight: null,
+   
+    highlight: "Most Popular"
     buttonText: "Join Cohort",
-    href: "/group-mentorship", // Replace with actual link
+    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-mastery-program-dropshipping-group-mentorship/", // Replace with actual link
   },
   {
     icon: UserCheck,
@@ -37,7 +38,7 @@ const masteryPrograms = [
     description: "1:1 mentorship with customized guidance from beginner to advanced strategies.",
     highlight: "Premium",
     buttonText: "Apply Now",
-    href: "/personal-mentorship", // Replace with actual link
+    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-mastery-program-dropshipping-1-on-1-mentorship/", // Replace with actual link
   },
 ];
 
@@ -47,14 +48,14 @@ const consultancySessions = [
     title: "QuickFix",
     description: "1-hour focused session to solve urgent business challenges.",
     buttonText: "Book Session",
-    href: "/quickfix", // Replace with actual link
+    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-consultancy-sessions-quickfix-session-1-hour/", // Replace with actual link
   },
   {
     icon: Zap,
     title: "Growth Pack",
     description: "4 intensive sessions over 2 weeks for deeper problem-solving and strategy guidance.",
     buttonText: "Get Growth Pack",
-    href: "/growth-pack", // Replace with actual link
+    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-consultancy-sessions-growth-pack-4-sessions/", // Replace with actual link
   },
 ];
 
@@ -64,14 +65,14 @@ const products = [
     title: "Winning Product List",
     description: "Curated list of high-potential dropshipping products ready to test.",
     buttonText: "Buy List",
-    href: "/winning-products", // Replace with actual link
+    href: "https://aquamarine-pony-152563.hostingersite.com/product/winning-product-list/", // Replace with actual link
   },
   {
     icon: Gift,
-    title: "Premium Dropshipping Kit",
+    title: "BB Clarity Program",
     description: "Recorded workshop + bonus resources for fast implementation.",
-    buttonText: "Get Kit",
-    href: "/premium-kit", // Replace with actual link
+    buttonText: "Buy Now",
+    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-clarity-program/", // Replace with actual link
   },
 ];
 

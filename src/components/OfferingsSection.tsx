@@ -21,7 +21,7 @@ const masteryPrograms = [
     description: "5-day intensive mentorship covering everything from store creation to scaling.",
      highlight: null,
     buttonText: "Join Bootcamp",
-    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-mastery-program-dropshipping-bootcamp/", // Replace with actual link
+    href: "https://banoboss.in/product/bb-mastery-program-dropshipping-bootcamp/", // Replace with actual link
   },
   {
     icon: Users,
@@ -30,7 +30,7 @@ const masteryPrograms = [
    
     highlight: "Most Popular"
     buttonText: "Join Cohort",
-    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-mastery-program-dropshipping-group-mentorship/", // Replace with actual link
+    href: "https://banoboss.in/product/bb-mastery-program-dropshipping-group-mentorship/", // Replace with actual link
   },
   {
     icon: UserCheck,
@@ -38,7 +38,7 @@ const masteryPrograms = [
     description: "1:1 mentorship with customized guidance from beginner to advanced strategies.",
     highlight: "Premium",
     buttonText: "Apply Now",
-    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-mastery-program-dropshipping-1-on-1-mentorship/", // Replace with actual link
+    href: "https://banoboss.in/product/bb-mastery-program-dropshipping-1-on-1-mentorship/", // Replace with actual link
   },
 ];
 
@@ -48,14 +48,14 @@ const consultancySessions = [
     title: "QuickFix",
     description: "1-hour focused session to solve urgent business challenges.",
     buttonText: "Book Session",
-    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-consultancy-sessions-quickfix-session-1-hour/", // Replace with actual link
+    href: "https://banoboss.in/product/bb-consultancy-sessions-quickfix-session-1-hour/", // Replace with actual link
   },
   {
     icon: Zap,
     title: "Growth Pack",
     description: "4 intensive sessions over 2 weeks for deeper problem-solving and strategy guidance.",
     buttonText: "Get Growth Pack",
-    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-consultancy-sessions-growth-pack-4-sessions/", // Replace with actual link
+    href: "https://banoboss.in/product/bb-consultancy-sessions-growth-pack-4-sessions/", // Replace with actual link
   },
 ];
 
@@ -65,14 +65,14 @@ const products = [
     title: "Winning Product List",
     description: "Curated list of high-potential dropshipping products ready to test.",
     buttonText: "Buy List",
-    href: "https://aquamarine-pony-152563.hostingersite.com/product/winning-product-list/", // Replace with actual link
+    href: "https://banoboss.in/product/winning-product-list/", // Replace with actual link
   },
   {
     icon: Gift,
     title: "BB Clarity Program",
     description: "Recorded workshop + bonus resources for fast implementation.",
     buttonText: "Buy Now",
-    href: "https://aquamarine-pony-152563.hostingersite.com/product/bb-clarity-program/", // Replace with actual link
+    href: "https://banoboss.in/product/bb-clarity-program/", // Replace with actual link
   },
 ];
 
@@ -176,12 +176,7 @@ const OfferingsSection = () => {
               </p>
             </div>
             {/* Keeping the Category 'View All' Button */}
-            <Button variant="hero" className="group w-fit" asChild>
-              <a href="https://mediumturquoise-snail-907786.hostingersite.com/product-category/bb-mastery-programs/">
-                Enroll Now
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
+            
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {masteryPrograms.map((program, index) => (
@@ -211,12 +206,12 @@ const OfferingsSection = () => {
               </p>
             </div>
              {/* Keeping the Category 'View All' Button */}
-            <Button variant="outline" className="group w-fit" asChild>
+            {/* <Button variant="outline" className="group w-fit" asChild>
               <a href="https://mediumturquoise-snail-907786.hostingersite.com/product-category/bb-consultancy-sessions/">
                 Book Now
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-            </Button>
+            </Button> */}
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6">
             {consultancySessions.map((session, index) => (
@@ -242,12 +237,12 @@ const OfferingsSection = () => {
               </p>
             </div>
              {/* Keeping the Category 'View All' Button */}
-            <Button variant="outline" className="group w-fit" asChild>
+            {/* <Button variant="outline" className="group w-fit" asChild>
               <a href="https://mediumturquoise-snail-907786.hostingersite.com/product-category/bb-products/">
                 Get Access Now
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-            </Button>
+            </Button> */}
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6">
             {products.map((product, index) => (

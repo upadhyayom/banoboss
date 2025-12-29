@@ -12,26 +12,32 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+// --- Data Configuration ---
+
 const masteryPrograms = [
   {
     icon: GraduationCap,
     title: "BootCamp",
-    description:
-      "5-day intensive mentorship covering everything from store creation to scaling.",
+    description: "5-day intensive mentorship covering everything from store creation to scaling.",
     highlight: "Most Popular",
+    buttonText: "Join Bootcamp",
+    href: "/bootcamp", // Replace with actual link
   },
   {
     icon: Users,
     title: "Group Mentorship",
     description: "3-month cohort program with live group sessions.",
     highlight: null,
+    buttonText: "Join Cohort",
+    href: "/group-mentorship", // Replace with actual link
   },
   {
     icon: UserCheck,
     title: "Personal Mentorship",
-    description:
-      "1:1 mentorship with customized guidance from beginner to advanced strategies.",
+    description: "1:1 mentorship with customized guidance from beginner to advanced strategies.",
     highlight: "Premium",
+    buttonText: "Apply Now",
+    href: "/personal-mentorship", // Replace with actual link
   },
 ];
 
@@ -40,12 +46,15 @@ const consultancySessions = [
     icon: Clock,
     title: "QuickFix",
     description: "1-hour focused session to solve urgent business challenges.",
+    buttonText: "Book Session",
+    href: "/quickfix", // Replace with actual link
   },
   {
     icon: Zap,
     title: "Growth Pack",
-    description:
-      "4 intensive sessions over 2 weeks for deeper problem-solving and strategy guidance.",
+    description: "4 intensive sessions over 2 weeks for deeper problem-solving and strategy guidance.",
+    buttonText: "Get Growth Pack",
+    href: "/growth-pack", // Replace with actual link
   },
 ];
 
@@ -53,27 +62,36 @@ const products = [
   {
     icon: Package,
     title: "Winning Product List",
-    description:
-      "Curated list of high-potential dropshipping products ready to test.",
+    description: "Curated list of high-potential dropshipping products ready to test.",
+    buttonText: "Buy List",
+    href: "/winning-products", // Replace with actual link
   },
   {
     icon: Gift,
     title: "Premium Dropshipping Kit",
     description: "Recorded workshop + bonus resources for fast implementation.",
+    buttonText: "Get Kit",
+    href: "/premium-kit", // Replace with actual link
   },
 ];
+
+// --- Components ---
 
 const OfferingCard = ({
   icon: Icon,
   title,
   description,
   highlight,
+  buttonText,
+  href,
   delay,
 }: {
   icon: React.ElementType;
   title: string;
   description: string;
   highlight?: string | null;
+  buttonText?: string;
+  href?: string;
   delay: number;
 }) => (
   <motion.div
@@ -81,22 +99,43 @@ const OfferingCard = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay }}
-    className="relative bg-card p-6 rounded-2xl shadow-card hover:shadow-elevated transition-all duration-300 border border-border/50 group"
+    // Added 'flex flex-col h-full' to ensure cards stretch and buttons align
+    className="relative bg-card p-6 rounded-2xl shadow-card hover:shadow-elevated transition-all duration-300 border border-border/50 group flex flex-col h-full"
   >
     {highlight && (
       <span className="absolute -top-3 right-4 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
         {highlight}
       </span>
     )}
-    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-      <Icon className="w-6 h-6 text-primary" />
+    
+    {/* Content Wrapper - takes up available space */}
+    <div className="flex-1">
+      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+        <Icon className="w-6 h-6 text-primary" />
+      </div>
+      <h4 className="font-serif font-semibold text-xl text-foreground mb-2">
+        {title}
+      </h4>
+      <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+        {description}
+      </p>
     </div>
-    <h4 className="font-serif font-semibold text-xl text-foreground mb-2">
-      {title}
-    </h4>
-    <p className="text-muted-foreground text-sm leading-relaxed">
-      {description}
-    </p>
+
+    {/* Button Wrapper - Pushed to bottom using mt-auto */}
+    {buttonText && href && (
+      <div className="mt-auto pt-4 border-t border-border/30">
+        <Button 
+          className="w-full group-hover:bg-primary/90" 
+          variant="secondary" 
+          asChild
+        >
+          <a href={href}>
+            {buttonText}
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </Button>
+      </div>
+    )}
   </motion.div>
 );
 
@@ -135,6 +174,7 @@ const OfferingsSection = () => {
                 Complete dropshipping mentorship from beginner to advanced
               </p>
             </div>
+            {/* Keeping the Category 'View All' Button */}
             <Button variant="hero" className="group w-fit" asChild>
               <a href="https://mediumturquoise-snail-907786.hostingersite.com/product-category/bb-mastery-programs/">
                 Enroll Now
@@ -169,6 +209,7 @@ const OfferingsSection = () => {
                 Personalized consultancy — ask anything, get expert guidance
               </p>
             </div>
+             {/* Keeping the Category 'View All' Button */}
             <Button variant="outline" className="group w-fit" asChild>
               <a href="https://mediumturquoise-snail-907786.hostingersite.com/product-category/bb-consultancy-sessions/">
                 Book Now
@@ -199,6 +240,7 @@ const OfferingsSection = () => {
                 Instant-access resources to accelerate your business success
               </p>
             </div>
+             {/* Keeping the Category 'View All' Button */}
             <Button variant="outline" className="group w-fit" asChild>
               <a href="https://mediumturquoise-snail-907786.hostingersite.com/product-category/bb-products/">
                 Get Access Now
